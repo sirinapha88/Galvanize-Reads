@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
+  <meta charset="UTF-8">
+  <title>Galvanize Reads - Books</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class='header'>
+        <h1><img class='logo' <img src="/images/galvanize-logo.png" alt="heart-eye" style="width:100px;height:100px;"> <a href="/">Galvanize Reads</a></h1>
+    </div><!-- end div header -->
+    <div class="row">
+       <div class="col-xs-6 col-sm-3">
+        <ul>
+          <li><a class="active" href="/books">Books</a></li>
+          <li><a href="/authors">Authors</a></li>
+        </ul>
+      </div> <!-- end col-xs-6 col-sm-3-->
+      <div class="col-xs-6 col-sm-6">        
+        <form id='new-form' action='/books/new' method='post'>
+              <br>
+              <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" name="title" value=""class="form-control" id="title" placeholder="Title">
+              </div>
+              <div class="form-group">
+                  <label for="genre">Genre</label>
+                  <input type="text" name="genre" value=""  class="form-control" id="genre" placeholder="Genre">
+              </div>
+              <div class="form-group">
+                  <label for="cover_image">Cover Image URL</label>
+                  <input type="text" type="text" name="cover" class="form-control" id="cover" placeholder="Cover Image URL">
+              </div>
+              <div class="form-group">
+                  <label for="desc">Description</label>
+                  <input type="text" type="text" name="desc" class="form-control" id="desc" placeholder="Description">
+              </div>
+              <div class="form-group">
+                  <label for="author">Author One</label>
+                  <input type="text" type="text" name="first_name" class="form-control" id="desc" placeholder="Author One Name">
+              </div>
+              <div class="form-group">
+                  <label for="author">Author Two</label>
+                  <input type="text" type="text" name="first_name" class="form-control" id="desc" placeholder="Author Two Name">
+              </div>
+              <button type="submit" name="button" class="btn btn-default" id='signup-btn'>Add Book</button>
+          </form>
+          <br>
+        </div>
+       
+    </div><!-- end div fluid -->
+</body>
+</html>

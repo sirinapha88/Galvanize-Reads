@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
+  <meta charset="UTF-8">
+  <title>Galvanize Reads - Books</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class='header'>
+        <h1><img class='logo' <img src="/images/galvanize-logo.png" alt="heart-eye" style="width:100px;height:100px;"> <a href="/">Galvanize Reads</a></h1>
+    </div><!-- end div header -->
+    <div class="row">
+       <div class="col-xs-6 col-sm-3">
+        <ul>
+          <li><a class="active" href="/books">Books</a></li>
+          <li><a href="/authors">Authors</a></li>
+        </ul>
+      </div> <!-- end col-md-4 -->
+        
+        <% books.forEach(function(book){ %>
+        
+          <img src="<%= book.book_cover%>" style="width:200px;height:250px;">       
+        
+        <div class="col-xs-6 col-sm-6">
+          <h4>Title: <%= book.book_title%></h4>
+          <h5>By Author: <%= book.first_name%> <%= book.last_name%></h5>
+          <h5>Genre:  <%= book.book_genre%></h5>
+          <p> <%= book.book_desc%></p>
+
+          <form action="/books/<%= book.id %>/edit?_method=GET" method="GET">
+                <input type="submit" value="Edit">
+          </form>
+            
+          <form action="/books/<%= book.id %>/delete" method="GET">
+            <input type="submit" value="Delete">
+          </form>
+        </div>
+        <% }) %>
+      </div><!-- end col-md-8 -->
+    </div><!-- end row -->
+       
+    </div><!-- end div fluid -->
+</body>
+</html>
