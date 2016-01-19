@@ -21,7 +21,6 @@ router.get('/displayBook/:book_id', function(req,res){
 	knex('books').where({id:id}).first().then(function(book){
 		res.render("books/displayBook", {book:book});
 	});
-
 });
 
 // New
@@ -51,15 +50,12 @@ router.get('/:id/edit',function(req,res){
 // Update
 router.put('/:id',function(req,res){
 	var id = req.params.id;
-	
 	knex('books').where({id:id}).first()
 	.update({"book_title": req.body.title,
 			"book_genre": req.body.genre,
 			"book_desc": req.body.desc })
 	.then(function(){		
-			// console.log(book);
-			res.redirect('/books/displayBook/' + id);
-		
+			res.redirect('/books/displayBook/' + id);		
 	});
 });
 
