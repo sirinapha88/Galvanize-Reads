@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
  		table.increments();// id serial primary key
  		table.string('first_name');
  		table.string('last_name');
- 		table.longtext('biography');
+ 		table.text('biography');
  		table.string('portrait_url');
  	});
 };
