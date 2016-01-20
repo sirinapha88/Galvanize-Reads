@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
  		table.increments();// id serial primary key
  		table.string('book_title');
  		table.string('book_genre');
- 		table.longtext('book_desc');
+ 		table.text('book_desc');
  		table.string('book_cover');
  	});
 };
